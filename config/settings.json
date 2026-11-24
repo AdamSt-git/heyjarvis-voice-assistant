@@ -1,0 +1,36 @@
+{
+  "$comment": "Wird von voice-assistant.sh per --settings nur für den Sprachassistenten geladen, nicht global. Erlaubt Apps zu öffnen, AppleScript zu nutzen und Web-Abfragen zu machen. Was unter ask steht, wird im Sprachmodus abgelehnt.",
+  "permissions": {
+    "allow": [
+      "Bash(open:*)",
+      "Bash(osascript:*)",
+      "Bash(say:*)",
+      "Bash(afplay:*)",
+      "Bash(curl:*)",
+      "Bash(jq:*)",
+      "Bash(shortcuts:*)",
+      "WebFetch",
+      "WebSearch",
+      "Read",
+      "Edit",
+      "Write",
+      "Grep",
+      "Glob"
+    ],
+    "ask": [
+      "Bash(sudo:*)",
+      "Bash(rm:*)",
+      "Bash(git push:*)",
+      "Bash(npm publish:*)",
+      "Bash(brew uninstall:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /:*)",
+      "Bash(dd:*)",
+      "Bash(mkfs:*)"
+    ]
+  },
+  "env": {
+    "HEYJARVIS_VOICE_MODE": "1"
+  }
+}

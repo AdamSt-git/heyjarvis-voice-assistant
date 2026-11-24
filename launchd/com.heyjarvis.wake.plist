@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Vorlage: install.sh --autostart ersetzt __HOME__ durch den eigenen Home-Ordner -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.heyjarvis.wake</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__HOME__/.heyjarvis/venv/bin/python3</string>
+    <string>__HOME__/.heyjarvis/wake-word.py</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <false/>
+  <key>WorkingDirectory</key>
+  <string>__HOME__/.heyjarvis</string>
+  <key>StandardOutPath</key>
+  <string>__HOME__/.heyjarvis/logs/wake-word.out</string>
+  <key>StandardErrorPath</key>
+  <string>__HOME__/.heyjarvis/logs/wake-word.err</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>__HOME__</string>
+    <key>LANG</key>
+    <string>en_US.UTF-8</string>
+  </dict>
+  <key>ProcessType</key>
+  <string>Interactive</string>
+</dict>
+</plist>
